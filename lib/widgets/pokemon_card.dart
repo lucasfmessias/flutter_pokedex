@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/helpers/pokemon_helper.dart';
 import 'package:pokedex/helpers/pokemon_type_helper.dart';
 import 'package:pokedex/models/pokemon_model.dart';
 

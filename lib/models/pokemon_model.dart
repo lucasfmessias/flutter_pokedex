@@ -36,7 +36,6 @@ class PokemonModel {
       name: json['name'],
       height: json['height'],
       weight: json['weight'],
-      // imageUrl: json['sprites']['front_default'],
       imageUrl:
           'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png',
       type1: typeList[0]['type']['name'],

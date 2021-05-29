@@ -39,22 +39,20 @@ class _HomePageState extends State<HomePage> {
           nextData:
               onNextData, // callback called when end to the list is reach and hasNext is true
         ),
-        // child: ListView.builder(
-        //   itemBuilder: _buildPokemonCard,
-        //   itemCount: _controller.lengh,
-        // ),
       ),
     );
   }
 
   AppBar _buildAppBar() {
     return AppBar(
-      title: Text(
-        'Pokedex',
-        style: TextStyle(fontFamily: 'PokemonSolid', fontSize: 28),
+      title: Image.asset(
+        "lib/assets/logo/Pokedex_logo.png",
+        fit: BoxFit.contain,
+        height: 62,
       ),
+      toolbarHeight: 88,
       centerTitle: true,
-      elevation: 0,
+      // elevation: 0,
       backgroundColor: Colors.red.shade900.withOpacity(0.90),
       iconTheme: IconThemeData(color: Colors.black),
       actions: [

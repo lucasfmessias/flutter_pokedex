@@ -23,6 +23,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    - lib/assets/logo/Pokedex_logo.png
+  
+
   fonts:
     - family: PokeGoTypes
       fonts:
