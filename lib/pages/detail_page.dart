@@ -42,6 +42,7 @@ class _DetailPageState extends State<DetailPage> {
       title: Text(
         _controller.name.replaceFirst(
             _controller.name[0], _controller.name[0].toUpperCase()),
+        style: TextStyle(fontFamily: 'PokemonSolid'),
       ),
       centerTitle: true,
       elevation: 0.0,
@@ -53,7 +54,7 @@ class _DetailPageState extends State<DetailPage> {
           child: Center(
             child: Text(
               _controller.id,
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18, fontFamily: 'PokemonSolid'),
             ),
           ),
         ),

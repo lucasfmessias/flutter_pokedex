@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: _buildAppBar(),
       body: Container(
-        color: Colors.red.shade900.withOpacity(0.85),
+        color: Colors.red.shade900.withOpacity(0.90),
         child: InfiniteGridView(
           crossAxisCount: 2,
           itemBuilder: _buildPokemonCard,

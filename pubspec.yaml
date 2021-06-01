@@ -25,6 +25,9 @@ flutter:
 
   assets:
     - lib/assets/logo/Pokedex_logo.png
+    - lib/assets/logo/pokeball-2.png
+    - lib/assets/logo/pokeball-3.png
+    - lib/assets/logo/pokeball-4.png
   
 
   fonts:
@@ -34,3 +37,6 @@ flutter:
     - family: PokemonSolid
       fonts:
         - asset: lib/assets/fonts/PokemonSolid.ttf
+    - family: PokemonHollow
+      fonts:
+        - asset: lib/assets/fonts/PokemonHollow.ttf

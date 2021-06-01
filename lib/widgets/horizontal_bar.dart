@@ -61,7 +61,7 @@ class PokemonStatBar extends StatelessWidget {
   }
 
   _buildBar({Color color, int value, Color colorFont}) {
-    print('$value / $maxValue');
+    // print('$value / $maxValue');
     return FractionallySizedBox(
       widthFactor: value / maxValue,
       child: Stack(
@@ -83,7 +83,9 @@ class PokemonStatBar extends StatelessWidget {
     return Container(
       height: height,
       alignment: Alignment.centerRight,
-      padding: const EdgeInsets.only(right: 5),
+      padding: power > 15
+          ? const EdgeInsets.only(right: 5)
+          : EdgeInsets.symmetric(horizontal: 0, vertical: 0),
       child: Text(
         power.toString(),
         style: TextStyle(

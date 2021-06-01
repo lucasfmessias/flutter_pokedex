@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/widgets/rotation_widget.dart';
 
 class PokemonHeader extends StatelessWidget {
   final String imageUrl;
@@ -19,6 +20,16 @@ class PokemonHeader extends StatelessWidget {
       color: backgroundColor,
       child: Stack(
         children: [
+          Align(
+            alignment: Alignment.bottomRight,
+            child: RotationPokeballImage(
+              child: Image.asset(
+                "lib/assets/logo/pokeball-2.png",
+                fit: BoxFit.fitWidth,
+                color: Theme.of(context).backgroundColor.withOpacity(0.6),
+              ),
+            ),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

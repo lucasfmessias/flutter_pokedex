@@ -21,7 +21,7 @@ class HomeController {
   Future<void> fetch() async {
     failure = null;
 
-    final result = await _repository.fetch(limit: _limit, offset: _offset);
+    final result = await _repository.fetch(offset: _offset, limit: _limit);
 
     result.fold((l) => failure = l, (r) => pokemons.addAll(r));
   }
