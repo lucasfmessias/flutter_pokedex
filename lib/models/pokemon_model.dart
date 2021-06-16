@@ -10,6 +10,7 @@ class PokemonModel {
   final int attack;
   final int defense;
   final int speed;
+  final String urlSpecies;
 
   PokemonModel({
     this.id,
@@ -23,6 +24,7 @@ class PokemonModel {
     this.attack,
     this.defense,
     this.speed,
+    this.urlSpecies,
   });
 
   // Criar método que pega o json e devolve um objeto
@@ -44,6 +46,7 @@ class PokemonModel {
       attack: statsList[1]['base_stat'],
       defense: statsList[2]['base_stat'],
       speed: statsList[5]['base_stat'],
+      urlSpecies: json['species']['url'],
     );
   }
 }

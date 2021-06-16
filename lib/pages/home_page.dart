@@ -4,6 +4,7 @@ import 'package:pokedex/pages/detail_page.dart';
 import 'package:pokedex/repositories/poke_repository_impl.dart';
 import 'package:pokedex/widgets/infinite_grid_view.dart';
 import 'package:pokedex/widgets/pokemon_card.dart';
+import 'package:pokedex/widgets/search_bar_animated.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _controller = HomeController(PokeRepositoryImpl());
+  final Color pokedexColor = const Color.fromARGB(255, 220, 9, 45);
 
   @override
   void initState() {
@@ -28,10 +30,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
+      floatingActionButton: AnimatedSearchBar(),
       body: Container(
-        color: Colors.red.shade900.withOpacity(0.90),
+        color: pokedexColor,
         child: InfiniteGridView(
-          crossAxisCount: 2,
           itemBuilder: _buildPokemonCard,
           itemCount: _controller.lengh, // Current itemCount you have
           hasNext: _controller.lengh <
@@ -45,21 +47,23 @@ class _HomePageState extends State<HomePage> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title: Image.asset(
-        "lib/assets/logo/Pokedex_logo.png",
-        fit: BoxFit.contain,
-        height: 62,
-      ),
       toolbarHeight: 88,
       centerTitle: true,
-      // elevation: 0,
-      backgroundColor: Colors.red.shade900.withOpacity(0.90),
+      elevation: 0,
+      backgroundColor: pokedexColor,
+      title: Image.asset(
+        "lib/assets/logo/Pokedex_logo.png",
+        height: 88 * 0.8,
+        alignment: Alignment.topCenter,
+      ),
       iconTheme: IconThemeData(color: Colors.black),
       actions: [
         IconButton(
+          padding: EdgeInsets.only(right: 20),
           icon: Icon(Icons.info_outline),
+          iconSize: 28,
           onPressed: () {},
-        )
+        ),
       ],
     );
   }

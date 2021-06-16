@@ -43,4 +43,27 @@ class PokeRepositoryImpl implements PokeRepository {
     final response = await dio.get(url);
     return PokemonModel.fromMap(response.data);
   }
+
+  @override
+  Future<Either<Failure, List<PokemonModel>>> fetchByName(
+      String pokemonName) async {
+    try {
+      // DIO acessar rest A
+      final dio = Dio();
+
+      // print('$kBaseUrl/pokemon?offset=$offset&limit=$limit');
+      final response = await dio.get(
+        '$kBaseUrl/pokemon/$pokemonName/',
+      );
+
+      final pokemonByName = <PokemonModel>[];
+      pokemonByName.add(PokemonModel.fromMap(response.data));
+
+      return Right(pokemonByName);
+    } on DioError catch (error) {
+      return Left(ApiError(error.message));
+    } catch (error) {
+      return Left(UnknownError(error.message));
+    }
+  }
 }

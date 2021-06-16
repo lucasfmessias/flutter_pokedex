@@ -16,6 +16,8 @@ class HomeController {
 
   List<PokemonModel> pokemons = <PokemonModel>[];
 
+  List<PokemonModel> pokemonByName = <PokemonModel>[];
+
   int get lengh => pokemons.length;
 
   Future<void> fetch() async {
@@ -29,5 +31,13 @@ class HomeController {
   Future<void> next() async {
     _offset += _limit;
     await fetch();
+  }
+
+  Future<void> fetchByName({String pokemonName}) async {
+    failure = null;
+
+    final result = await _repository.fetchByName(pokemonName);
+
+    result.fold((l) => failure = l, (r) => pokemonByName.addAll(r));
   }
 }

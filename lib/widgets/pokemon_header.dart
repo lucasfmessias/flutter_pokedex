@@ -16,16 +16,16 @@ class PokemonHeader extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.width * 0.5,
+      height: size.width * 0.6,
       color: backgroundColor,
       child: Stack(
         children: [
           Align(
-            alignment: Alignment.bottomRight,
+            alignment: Alignment.bottomCenter,
             child: RotationPokeballImage(
               child: Image.asset(
                 "lib/assets/logo/pokeball-2.png",
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.fitHeight,
                 color: Theme.of(context).backgroundColor.withOpacity(0.6),
               ),
             ),
@@ -43,12 +43,15 @@ class PokemonHeader extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: size.width * 0.5,
-            width: size.width,
-            child: Image.network(
-              imageUrl,
-              fit: BoxFit.fitHeight,
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: size.width * 0.5,
+              width: size.width,
+              child: Image.network(
+                imageUrl,
+                fit: BoxFit.fitHeight,
+              ),
             ),
           ),
         ],

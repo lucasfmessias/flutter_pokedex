@@ -8,4 +8,6 @@ abstract class PokeRepository {
       {int offset = 0, int limit = 20});
 
   Future<PokemonModel> fetchByUrl(String url);
+
+  Future<Either<Failure, List<PokemonModel>>> fetchByName(String url);
 }

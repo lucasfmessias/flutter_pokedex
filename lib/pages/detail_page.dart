@@ -33,7 +33,9 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: _buildBody(),
+      body: SingleChildScrollView(
+        child: _buildBody(),
+      ),
     );
   }
 
