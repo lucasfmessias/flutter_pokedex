@@ -54,7 +54,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
                 controller: _filter,
                 autofocus: true,
                 decoration: InputDecoration(
-                  hintText: 'Search',
+                  hintText: 'Search Pokemon',
                   hintStyle: TextStyle(color: Colors.blue[300]),
                   border: InputBorder.none,
                 ),
@@ -88,7 +88,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
           onTap: () {
             setState(() {
               _folded = !_folded;
-              _searchPressed();
+              // _searchPressed();
             });
           },
         ),

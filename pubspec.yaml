@@ -19,6 +19,19 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^1.1.5+1
+  flutter_launcher_icons: ^0.9.0
+
+flutter_native_splash:
+  color: "#dc092d"
+  image: "lib/assets/logo/pokeball-2.png"
+  android: true
+  ios: true
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "lib/assets/icons/icon_pokeball.png"
 
 flutter:
   uses-material-design: true
