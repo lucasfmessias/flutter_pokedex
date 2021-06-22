@@ -108,8 +108,22 @@ class _DetailPageState extends State<DetailPage> {
                 : PokemonTypeHelper.getColor(widget.pokemon.type1),
           ),
           PokemonStatBar(
+            label: 'SATK',
+            value: _controller.spAttack,
+            foregroundColor: widget.pokemon.type1 == 'electric'
+                ? PokemonHelper.getColor(widget.pokemon.type1)
+                : PokemonTypeHelper.getColor(widget.pokemon.type1),
+          ),
+          PokemonStatBar(
             label: 'DEF',
             value: _controller.defense,
+            foregroundColor: widget.pokemon.type1 == 'electric'
+                ? PokemonHelper.getColor(widget.pokemon.type1)
+                : PokemonTypeHelper.getColor(widget.pokemon.type1),
+          ),
+          PokemonStatBar(
+            label: 'SDEF',
+            value: _controller.spAttack,
             foregroundColor: widget.pokemon.type1 == 'electric'
                 ? PokemonHelper.getColor(widget.pokemon.type1)
                 : PokemonTypeHelper.getColor(widget.pokemon.type1),
@@ -121,19 +135,6 @@ class _DetailPageState extends State<DetailPage> {
                 ? PokemonHelper.getColor(widget.pokemon.type1)
                 : PokemonTypeHelper.getColor(widget.pokemon.type1),
           ),
-          // Container(
-          //   margin: EdgeInsets.only(top: 30.0),
-          //   height: 120.0,
-          //   child: ListView(
-          //     scrollDirection: Axis.horizontal,
-          //     children: [
-          //       _infoEvolutionCard(label: 'ID', content: _controller.id),
-          //       _infoEvolutionCard(label: 'Name', content: _controller.name),
-          //       _infoEvolutionCard(
-          //           label: 'Type', content: _controller.types[0]),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );

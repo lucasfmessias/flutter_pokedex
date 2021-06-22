@@ -30,5 +30,9 @@ class DetailController {
 
   int get defense => _pokemon.defense;
 
+  int get spAttack => _pokemon.specialAttack;
+
+  int get spDefense => _pokemon.specialDefense;
+
   int get speed => _pokemon.speed;
 }
